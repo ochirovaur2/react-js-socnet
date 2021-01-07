@@ -4,14 +4,13 @@ import Nav from "./components/Nav/Nav";
 import Main from "./components/Main/Main";
 import {BrowserRouter} from "react-router-dom";
 
-
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className='wrapper'>
                 <Header/>
                 <Nav/>
-                <Main/>
+                <Main state={props.state}/>
             </div>
         </BrowserRouter>
     );

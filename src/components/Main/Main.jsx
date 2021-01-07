@@ -7,11 +7,14 @@ import {
 } from "react-router-dom"
 
 
-const Main = () => {
+
+
+const Main = (props) => {
+
     return (
         <section className={s.main}>
-            <Route path='/profile' component={Profile}/>
-            <Route path='/dialogs' component={Dialogs}/>
+            <Route path='/profile'  render = { () => <Profile posts={props.state.profile_page.posts}/> }/>
+            <Route path='/dialogs'    render = { () => <Dialogs dialogs_arr={props.state.dialogs_page.dialogs_arr} messages={props.state.dialogs_page.messages}/> } />
         </section>
     )
 };
