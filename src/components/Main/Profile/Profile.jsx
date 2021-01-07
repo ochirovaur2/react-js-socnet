@@ -7,7 +7,7 @@ import AddPost from "../AddPost/AddPost";
 const Profile = (props) => {
     return (
         <div className={s.profile}>
-            <AddPost/>
+            <AddPost add_post={props.add_post}/>
 
             <div className={s.profile__posts}>
                 {props.posts.map( (post) => {

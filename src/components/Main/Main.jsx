@@ -13,7 +13,7 @@ const Main = (props) => {
 
     return (
         <section className={s.main}>
-            <Route path='/profile'  render = { () => <Profile posts={props.state.profile_page.posts}/> }/>
+            <Route path='/profile'  render = { () => <Profile posts={props.state.profile_page.posts} add_post={props.add_post}/>  }/>
             <Route path='/dialogs'    render = { () => <Dialogs dialogs_arr={props.state.dialogs_page.dialogs_arr} messages={props.state.dialogs_page.messages}/> } />
         </section>
     )

@@ -10,4 +10,14 @@ let state = {
 
 }
 
+
+export let add_post = () => {
+    let new_post = {
+        text: 'New post'
+    }
+
+    state.profile_page.posts = [...state.profile_page.posts, new_post]
+    console.log(state.profile_page)
+};
+
 export default state;
