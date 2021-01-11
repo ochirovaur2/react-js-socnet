@@ -1,10 +1,6 @@
 import s from "./dialog.module.scss";
 import {NavLink} from "react-router-dom";
 
-
-
-
-
 export const Dialog = (props) => {
     return (
         <div >

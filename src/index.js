@@ -4,20 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store';
+import {Provider} from "react-redux";
 
-let rerender_dom = (state) => {
+let rerender_dom = ( ) => {
 
     ReactDOM.render(
-        <React.StrictMode>
-            <App state={state} dispatch={store.dispatch.bind(store)} />
-        </React.StrictMode>,
+        <Provider store={store}>
+            <React.StrictMode>
+
+                <App   />
+
+
+            </React.StrictMode>
+        </Provider>,
         document.getElementById('root')
     );
 }
 
-rerender_dom(store.getState());
+
+
+rerender_dom( );
 store.subscribe(() => {
-    rerender_dom(store.getState())
+    rerender_dom( )
 });
 
 

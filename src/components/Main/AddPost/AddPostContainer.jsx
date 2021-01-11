@@ -1,7 +1,7 @@
 import React from "react";
 import {update_textarea_action_creator, add_post_action_creator} from "../../../redux/profile-reducer";
 import AddPost from "./AddPost";
-
+import { connect } from 'react-redux';
 
 const AddPostContainer = (props) => {
     console.log(3.5, props)
@@ -22,4 +22,23 @@ const AddPostContainer = (props) => {
 
 };
 
-export default AddPostContainer;
+
+const mapStateToProps = (state) => {
+    return {
+        new_post_text: state.profile_reducer.new_post_text
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        update_textarea: (text) => {
+            dispatch(update_textarea_action_creator(text));
+        },
+        add_post: () =>{
+            dispatch(add_post_action_creator());
+        }
+    }
+};
+
+
+export default connect (mapStateToProps, mapDispatchToProps) (AddPost) ;
