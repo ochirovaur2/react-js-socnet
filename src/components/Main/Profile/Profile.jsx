@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './profile.module.scss';
-import AddPost from "../AddPost/AddPost";
-
+import AddPostContainer from "../AddPost/AddPostContainer";
 
 
 const Profile = (props) => {
+    console.log(3, props)
     return (
         <div className={s.profile}>
-            <AddPost add_post={props.add_post}/>
+            <AddPostContainer dispatch={props.dispatch} new_post_text={props.new_post_text}   />
 
             <div className={s.profile__posts}>
                 {props.posts.map( (post) => {
