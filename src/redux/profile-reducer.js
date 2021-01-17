@@ -9,20 +9,24 @@ let initial_state = {
 }
 
 const profile_reducer = (state=initial_state, action) => {
+    let state_copy = {...state}
 
+    state_copy.new_post_text = {...state.new_post_text}
     switch (action.type) {
         case ADD_POST:
 
-            state.posts = [...state.posts, {text: state.new_post_text.text}];
-            state.new_post_text.text = '';
+            state_copy.posts = [...state_copy.posts, {text: state_copy.new_post_text.text}];
+            state_copy.new_post_text.text = '';
             break;
         case UPDATE_TEXTAREA:
-            state.new_post_text.text = action.text;
+            state_copy.new_post_text.text = action.text;
             break;
         default:
             return state;
     }
-    return state;
+    console.log(state_copy)
+    return state_copy;
+
 
 };
 

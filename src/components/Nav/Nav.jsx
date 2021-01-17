@@ -14,6 +14,9 @@ const Nav = () => {
                 <NavLink to='/dialogs'>
                     <li className={s.nav__li}>Dialogs</li>
                 </NavLink>
+                <NavLink to='/users'>
+                    <li className={s.nav__li}>Users</li>
+                </NavLink>
             </ul>
         </nav>
     )

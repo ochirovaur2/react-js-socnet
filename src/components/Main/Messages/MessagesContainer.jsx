@@ -4,7 +4,7 @@ import Messages from "./Messages";
 import { connect } from 'react-redux';
 
 const MessagesContainer = (props) => {
-    console.log(props)
+
     let update_textarea = (text) => {
 
         props.dispatch(update_msg_text(text))
@@ -24,9 +24,10 @@ const MessagesContainer = (props) => {
 
 
 const mapStateToProps = (state) => {
+    console.log(state.dialogs_reducer)
     return {
         messages: state.dialogs_reducer.messages,
-        textarea_val: state.dialogs_reducer.textarea_val
+        textarea_val: state.dialogs_reducer.new_message_text
     }
 }
 const mapDispatchToProps = (dispatch) => {

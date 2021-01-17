@@ -1,7 +1,7 @@
 import React from "react";
 
 const AddPost = (props) => {
-    console.log(4,props)
+
 
     let new_post_textarea = React.createRef();
 
@@ -10,11 +10,13 @@ const AddPost = (props) => {
 
     };
 
+
     let on_textarea_change = () => {
         let text = new_post_textarea.current.value;
 
         props.update_textarea(text);
     };
+
     return (
         <div>
             <div>
